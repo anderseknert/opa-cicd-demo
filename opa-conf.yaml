@@ -1,0 +1,18 @@
+discovery:
+  name: discovery
+  resource: /systems/a7251008c8ca45bdbc76bc3e78fb2b76/discovery
+  service: styra
+labels:
+  system-id: a7251008c8ca45bdbc76bc3e78fb2b76
+  system-type: terraform
+services:
+- credentials:
+    bearer:
+      token: hthy7Un_ecgPlsXb9Ofcvb1KZkc3YNEahtJLy_v_zqaXIKDCiZz-TDPHYUENllru0aOKs4EnLVZNkmgLngWyzkjJ6B3yS-n2
+  name: styra
+  url: https://test.styra.com/v1
+- credentials:
+    bearer:
+      token: hthy7Un_ecgPlsXb9Ofcvb1KZkc3YNEahtJLy_v_zqaXIKDCiZz-TDPHYUENllru0aOKs4EnLVZNkmgLngWyzkjJ6B3yS-n2
+  name: styra-bundles
+  url: https://test.styra.com/v1/bundles

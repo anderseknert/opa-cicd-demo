@@ -19,7 +19,7 @@ resource "aws_s3_bucket" "opa-tf-bucket" {
   }
 }
 
-# resource "aws_s3_bucket" "another-bucket2" {
-#  bucket = "another-bucket"
-#  acl    = "public-read"
-#}
+resource "aws_s3_bucket" "another-bucket2" {
+  bucket = "another-bucket"
+  acl    = "public-read"
+}

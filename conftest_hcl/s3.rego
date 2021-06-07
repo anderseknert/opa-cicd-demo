@@ -1,5 +1,7 @@
 package main
 
+# Example policy scanning .tf files rather than TF plans
+
 deny[msg] {
     bucket := input.resource.aws_s3_bucket[name]
 

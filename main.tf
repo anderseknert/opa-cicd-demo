@@ -1,3 +1,25 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "3.44.0"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = "3.0.1"
+    }
+  }
+  required_version = "~> 0.15.5"
+
+  backend "remote" {
+    organization = "eknert"
+
+    workspaces {
+      name = "opa-cicd-demo"
+    }
+  }
+}
+
 provider "aws" {
   region = "eu-north-1"
 }
@@ -17,9 +39,4 @@ resource "aws_s3_bucket" "opa-tf-bucket" {
   tags = {
     name = "opa-tf-bucket"
   }
-}
-
-resource "aws_s3_bucket" "another-bucket2" {
-  bucket = "another-bucket"
-  acl    = "public-read"
 }

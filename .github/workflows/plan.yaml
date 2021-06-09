@@ -53,6 +53,7 @@ jobs:
 
       - name: Conftest test
         run: ./conftest test tfplan.json --output junit > conftest.xml
+        continue-on-error: true
 
       - name: JUnit report
         uses: mikepenz/action-junit-report@v2

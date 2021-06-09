@@ -41,6 +41,10 @@ jobs:
       - name: Remove binary plan
         run: rm tfplan.binary
 
-      - name: OPA eval
-        run: ./opa eval --fail-defined --input tfplan.json --data policy/main.rego 'data.main.deny[x]'
+      #- name: OPA eval
+      #  run: ./opa eval --fail-defined --input tfplan.json --data policy/main.rego 'data.main.deny[x]'
 
+      - name: conftest test
+        uses: instrumenta/conftest-action@master
+        with:
+          files: tfplan.json

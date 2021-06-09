@@ -41,27 +41,6 @@ jobs:
       - name: Remove binary plan
         run: rm tfplan.binary
 
-      - name: Archive plan
-        uses: actions/upload-artifact@v2
-        with:
-          name: tfplan.json
-          path: tfplan.json
-
-      - name: Print plan
-        run: cat tfplan.json
-
-      - name: jq input
-        run: cat tfplan.json | jq
-
-      - name: Print policy
-        run: cat policy/main.rego
-
-      - name: OPA eval data
-        run: ./opa eval --input tfplan.json --data policy/main.rego 'data'
-
-      - name: OPA eval input
-        run: ./opa eval --input tfplan.json --data policy/main.rego 'input'
-
       - name: OPA eval
         run: ./opa eval --fail-defined --input tfplan.json --data policy/main.rego 'data.main.deny[x]'
 

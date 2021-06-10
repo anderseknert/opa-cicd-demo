@@ -42,5 +42,7 @@ jobs:
         run: rm tfplan.binary
 
       - name: OPA eval
-        run: ./opa eval --fail-defined --input tfplan.json --data policy/main.rego 'data.main.deny[x]'
+        run: ./opa eval --format pretty --fail-defined --input tfplan.json --data policy/main.rego 'data.main.deny[x]'
 
+      # OR download conftest and run tests:
+      # conftest test tfplan.json

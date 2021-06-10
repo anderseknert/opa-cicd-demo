@@ -14,7 +14,7 @@ terraform show -json tfplan.binary > tfplan.json
 ### opa eval
 
 ```shell
-opa eval --fail-defined --input tfplan.json --data policy/main.rego 'data.main.deny'
+opa eval --format pretty --fail-defined --input tfplan.json --data policy/main.rego 'data.main.deny[x]'
 ```
 
 ### conftest test

@@ -11,9 +11,8 @@ deny[msg] {
 	changeset.type == "aws_s3_bucket"
 	changeset.change.after.acl != "private"
 
-	msg := sprintf("S3 bucket '%v' has a non-private acl value", [changeset.name])
+	msg := sprintf("Bucket '%v' has a non-private acl value", [changeset.name])
 }
-
 
 deny[msg] {
     changeset := changesets[address]
@@ -24,5 +23,5 @@ deny[msg] {
     missing_tags := required_tags - provided_tags
     missing_tag := missing_tags[_]
 
-	msg := sprintf("missing %v tag on %v", [missing_tag, address])
+	msg := sprintf("Missing %v tag on %v", [missing_tag, address])
 }

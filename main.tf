@@ -37,8 +37,8 @@ resource "aws_s3_bucket" "opa-tf-bucket" {
   }
 
   tags = {
-    Owner = "Anders Eknert"
-    Team = "Styra"
+    Owner   = "Anders Eknert"
+    Team    = "Styra"
     Project = "OPA Demo"
   }
 }

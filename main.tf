@@ -42,3 +42,12 @@ resource "aws_s3_bucket" "opa-tf-bucket" {
     Project = "OPA Demo"
   }
 }
+
+resource "aws_s3_bucket" "opa-demo-bucket" {
+  bucket = "opa-demo-bucket"
+  acl    = "private"
+
+  tags = {
+    name = "opa-demo-bucket"
+  }
+}

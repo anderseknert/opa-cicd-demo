@@ -45,7 +45,7 @@ resource "aws_s3_bucket" "opa-tf-bucket" {
 
 resource "aws_s3_bucket" "opa-demo-bucket" {
   bucket = "opa-demo-bucket"
-  acl    = "public-read"
+  acl    = "private"
 
   tags = {
     name = "opa-demo-bucket"
